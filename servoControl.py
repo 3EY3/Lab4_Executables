@@ -5,13 +5,11 @@ import math
 from std_msgs.msg import Int64
 from sensor_msgs.msg import Joy
 from std_msgs.msg import Float64
-global a
 global pub
 
 def callback(data):
     global pub
     a = data.axes[0]*0.5+0.5
-    rospy.loginfo(a)
     pub.publish(a)
     
      
