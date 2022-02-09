@@ -23,7 +23,7 @@ def JoyControl():  ## node function
     global pub
     global multiplier
     rospy.init_node("JoyControl", anonymous=True)  ## intialize node
-    rospy.Subscriber("/joy_orig", Joy, callback)  ## set subscriber
+    rospy.Subscriber("/joy", Joy, callback)  ## set subscriber
     cm = rospy.get_param("~ControlMethod")  ## read parameter values
     multiplier = rospy.get_param("~Multiplier")
     pub = rospy.Publisher(select_method(cm), Float64, queue_size=10)  ## set publisher 
