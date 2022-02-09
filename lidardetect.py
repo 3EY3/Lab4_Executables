@@ -34,10 +34,11 @@ def brake():
         pass
 
 def select_method(cm):  ## select control method to drive VESC
-    if(cm>2 or cm<0):
-        cm = 0
     method = ["commands/motor/duty_cycle", "commands/motor/speed", "commands/motor/current"]
-    return(method[cm])
+    try:
+        return(method[cm])
+    except IndexError: 
+        return(method[0])
      
 
 def lidardetect():
