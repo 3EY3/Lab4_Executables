@@ -9,7 +9,7 @@ global pub
 
 def callback(data):
     global pub
-    a = data.axes[0]*0.5+0.5
+    a = -1*data.axes[0]*0.5+0.5
     pub.publish(a)
     
      
